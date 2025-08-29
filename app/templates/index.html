@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2048</title>
+
+    <link href="/static/style/main.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/metale-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="/static/metale-touch-startup-image-640x1096.png"
+          media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPhone 5+ -->
+    <link rel="apple-touch-startup-image" href="/static/metale-touch-startup-image-640x920.png"
+          media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPhone, retina -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+          content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+<div class="container">
+    <div class="heading">
+        <h1 class="title">2048</h1>
+        <div class="scores-container">
+            <div class="score-container">0</div>
+            <div class="best-container">0</div>
+        </div>
+    </div>
+
+    <div class="above-game">
+        <p class="game-intro">Raqamlarni qo'shing va <strong>2048</strong> hosil qiling!</p>
+        <a class="restart-button">Yangi o'yin</a>
+    </div>
+    <div class="game-container">
+        <div class="game-message">
+            <p></p>
+            <div class="lower">
+                <a class="keep-playing-button">Keep going</a>
+                <a class="retry-button">Try again</a>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+        </div>
+
+        <div class="tile-container">
+
+        </div>
+    </div>
+
+    <p class="game-explanation">
+        <strong class="important">Qanday o‘ynash kerak:</strong>
+        Plitkalarni <strong>strelka tugmalari</strong> yordamida harakatlantiring.
+        Bir xil raqamli ikkita plitka to‘qnashganda, ular <strong>bitta plitkaga birlashadi!</strong>
+    </p>
+
+</div>
+
+<script src="/static/js/bind_polyfill.js"></script>
+<script src="/static/js/classlist_polyfill.js"></script>
+<script src="/static/js/animframe_polyfill.js"></script>
+<script src="/static/js/keyboard_input_manager.js"></script>
+<script src="/static/js/html_actuator.js"></script>
+<script src="/static/js/grid.js"></script>
+<script src="/static/js/tile.js"></script>
+<script src="/static/js/local_storage_manager.js"></script>
+<script src="/static/js/game_manager.js"></script>
+<script src="/static/js/application.js"></script>
+</body>
+</html>
