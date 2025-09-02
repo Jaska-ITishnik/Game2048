@@ -12,6 +12,17 @@ async_session_maker = async_sessionmaker(engine, class_=AsyncSession)
 from functools import wraps
 
 
+async def get_session() -> AsyncSession:
+    async with async_session_maker() as session:
+        try:
+            yield session  # Возвращаем сессию для использования
+        except Exception:
+            await session.rollback()  # Откатываем транзакцию при ошибке
+            raise
+        finally:
+            await session.close()  # Закрываем сессию
+
+
 def connection(isolation_level=None):
     def decorator(method):
         @wraps(method)

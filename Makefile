@@ -1,5 +1,5 @@
 extract:
-	pybabel extract --input-dirs=. -o locales/messages.pot # SEARCH FROM ALL FILES I18N
+	pybabel extract -F babel.cfg -o locales/messages.pot . # SEARCH FROM ALL FILES I18N
 
 init:
 	pybabel init -i locales/messages.pot -d locales -D messages -l ru

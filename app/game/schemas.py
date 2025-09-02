@@ -10,3 +10,12 @@ class UserModel(TelegramIDModel):
     first_name: str
     last_name: str
     best_score: int
+
+
+class SetBestScoreRequest(BaseModel):
+    score: int
+
+
+class SetBestScoreResponse(BaseModel):
+    status: str
+    best_score: int
