@@ -1,23 +1,14 @@
-window.addEventListener('load', () => {
+window.addEventListener('load', (event) => {
     const tg = window.Telegram.WebApp;
-    tg.ready();
-    tg.expand();
+    tg.ready();               // Подготовка WebApp
+    tg.expand();              // Разворачиваем WebApp
 
-    // Save userId
+    // Сохраняем userId в localStorage
     const userId = tg.initDataUnsafe.user?.id;
     if (userId) {
         localStorage.setItem("userId", userId);
         console.log("User ID сохранен:", userId);
+    } else {
+        console.error("User ID не найден в initDataUnsafe.");
     }
-
-    // Detect language from Telegram OR fallback to 'uz'
-    const userLang = tg.initDataUnsafe.user?.language_code || "ru";
-    localStorage.setItem("lang", userLang);
-    console.log("Language сохранен:", userLang);
-
-    // Example: redirect to backend with lang param
-    const backendUrl = `https://7ef19212fca3.ngrok-free.app?lang=ru`;
-    document.getElementById("openDashboardBtn").addEventListener("click", () => {
-        window.location.href = backendUrl;
-    });
 });

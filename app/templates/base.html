@@ -31,8 +31,15 @@
 
 <body>
 <div class="container">
+    <!-- Language switcher -->
+    <div class="lang-switcher">
+        <a href="?lang=uz" class="lang-btn {% if current_lang == 'uz' %}active{% endif %}">🇺🇿 O‘zbek</a>
+        <a href="?lang=ru" class="lang-btn {% if current_lang == 'ru' %}active{% endif %}">🇷🇺 Русский</a>
+    </div>
+
     {% block content %}{% endblock %}
 </div>
+</body>
 
 {% block extra_scripts %}{% endblock %}
 </body>

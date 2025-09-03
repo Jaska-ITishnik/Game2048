@@ -1,16 +1,18 @@
+import contextvars
 import gettext
 from pathlib import Path
-import contextvars
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 LOCALES_DIR = BASE_DIR / "locales"
 
 # Context variable to store current language
 current_lang = contextvars.ContextVar("current_lang", default="uz")
 
+
 def set_locale(lang: str):
     """Set current language (uz/ru)"""
     current_lang.set(lang)
+
 
 def get_translation(lang: str = None):
     """Return gettext translation object"""
@@ -21,6 +23,7 @@ def get_translation(lang: str = None):
         languages=[lang],
         fallback=True,
     )
+
 
 def _(text: str) -> str:
     """Universal translation function"""

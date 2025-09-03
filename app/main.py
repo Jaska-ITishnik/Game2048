@@ -47,15 +47,17 @@ app = FastAPI(lifespan=lifespan)
 
 @app.middleware("http")
 async def detect_lang_middleware(request: Request, call_next):
-    # lang = request.query_params.get("lang") or request.headers.get("Accept-Language", "uz")[:2]
-    lang = "ru"
-    set_locale(lang if lang in ["uz", "ru"] else "uz")
+    lang = request.query_params.get("lang")
+
+    lang = lang if lang in ["uz", "ru"] else "uz"
+    set_locale(lang)
 
     translations = get_translation()
     templates.env.globals.update({
         "_": translations.gettext,
         "gettext": translations.gettext,
         "ngettext": translations.ngettext,
+        "current_lang": lang,
     })
 
     response = await call_next(request)

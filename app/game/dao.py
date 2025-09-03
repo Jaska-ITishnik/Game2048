@@ -37,7 +37,7 @@ class UserDAO(Base):
     async def get_top_scores(cls, session: AsyncSession, limit: int = 20):
         try:
             query = (
-                select(cls.model.telegram_id, cls.model.first_name, cls.model.best_score).order_by(
+                select(cls.model.telegram_id, cls.model.first_name, cls.model.best_score).where(cls.model.best_score != 0).order_by(
                     desc(cls.model.best_score)
                 ).limit(limit)
             )
