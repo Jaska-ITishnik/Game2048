@@ -26,3 +26,80 @@
     color: white;
     border-color: #007aff;
 }
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 12px;
+    font-family: "Inter", sans-serif;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    background: #faf8ef;
+    padding: 12px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon-btn {
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 12px;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn svg {
+    width: 28px;
+    height: 28px;
+    color: #444;
+    transition: color 0.25s ease;
+}
+
+/* Hover Effects */
+.icon-btn:hover {
+    background: #e0dfd5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-btn:active {
+    transform: scale(0.95);
+}
+
+/* Specific Button Colors */
+.records-btn:hover svg {
+    color: #ff9800; /* Gold trophy */
+}
+
+.reset-btn:hover svg {
+    color: #2196f3; /* Blue refresh */
+}
+
+.exit-btn:hover svg {
+    color: #f44336; /* Red exit */
+}
+
+/* Game explanation text */
+.game-explanation {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.important {
+    color: #333;
+    font-weight: 600;
+}
